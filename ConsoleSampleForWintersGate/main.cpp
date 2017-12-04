@@ -242,28 +242,15 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
         //cout << temp.getSongVector().at(i).fileLocation << endl;
     }
 
-    Library sampleLib;
-    sampleLib.addArtist(library[0].artist);
-    //cout << sampleLib.getArtists().at(0).getArtistName() << endl;
-
-    sampleLib.getArtists().at(0).addAlbum(library[0].artist);
-
     Artist sampleArtist(library[0].artist);
     Album sampleAlbum(library[0].album);
-    Song sampleSong(library[0]);
+    Song sampleSong = library[0];
     sampleAlbum.addSong(sampleSong);
     sampleArtist.addAlbum(sampleAlbum);
-
-    //cout << sampleArtist.getAlbums().at(0).getSongVector().at(0).fileLocation << endl;
-
-    //cout << sampleAlbum.getAlbumTitle() << endl;
-
-    cout << sampleLib.getArtists().at(0).getAlbums().size() << endl;
+    songLibrary.addArtist(sampleArtist);
+    cout << songLibrary.getArtists().at(0).getAlbums().at(0).getSongVector().at(0).fileLocation << endl;
 
 
-
-
-    //cout << songLibrary.getArtists(). << endl;
     //use hashtables or map or multimap depending on what c++ calls it
 }
 
