@@ -15,7 +15,7 @@ typedef std::vector<std::string> stringvec;
 //custom data type for the song
 struct Song{
     string title;
-    string arist;
+    string artist;
     string album;
     string year;
     string comment;
@@ -24,23 +24,26 @@ struct Song{
 
 class Album{
     private:
-        const string albumTitle;
+        string albumTitle;
         vector<Song> songs;
     public:
-        void getAlbumTitle();
+        Album(string title);
+        ~Album();
+        string getAlbumTitle();
         void addSong(Song song);
-        void getSongArray();
+        vector<Song> getSongVector();
+        int getArraySize();
 };
 
 class Artist{
     private:
-        const string artistName;
+        string artistName;
         vector<Album> albums;
     public:
-        Artist();
         Artist(string name);
         ~Artist();
         string getArtistName();
+        void addAlbum(Album newAlbum);
         vector<Album> getAlbums();
 };
 
@@ -50,10 +53,33 @@ class Library{
     public:
         Library();
         ~Library();
-        void addArtist(Artist artist);
         vector<Artist> getArtists();
-        int getVectorSize();
+        void addArtist(Artist art);
+        int getArtistVectorSize();
 };
+
+Album::Album(string title){
+    albumTitle = title;
+}
+
+Album::~Album(){
+}
+
+string Album::getAlbumTitle(){
+    return albumTitle;
+}
+
+void Album::addSong(Song song){
+    songs.push_back(song);
+}
+
+vector<Song> Album::getSongVector(){
+    return songs;
+}
+
+int Album::getArraySize(){
+    return songs.size();
+}
 
 Library::Library(){
 }
@@ -69,15 +95,12 @@ void Library::addArtist(Artist art){
     artists.push_back(art);
 }
 
-int Library::getVectorSize(){
+int Library::getArtistVectorSize(){
     return artists.size();
 }
 
-Artist::Artist(){
-}
-
 Artist::Artist(string name){
-    name = artistName;
+    artistName = name;
 }
 
 Artist::~Artist(){
@@ -85,6 +108,14 @@ Artist::~Artist(){
 
 string Artist::getArtistName(){
     return artistName;
+}
+
+void Artist::addAlbum(Album newAlbum){
+    albums.push_back(newAlbum);
+}
+
+vector<Album> Artist::getAlbums(){
+    return albums;
 }
 
 //checks if file is a .mp3 file
@@ -162,7 +193,7 @@ void readFile(FILE* file, Song& song, string fileLocation){
     int readLocation = getFileSize(file)-125;
     song.title = readInfo(file, readLocation);
     readLocation = readLocation + 30;
-    song.arist = readInfo(file, readLocation);
+    song.artist = readInfo(file, readLocation);
     readLocation = readLocation + 30;
     song.album = readInfo(file, readLocation);
     readLocation = readLocation + 30;
@@ -194,32 +225,44 @@ void addFilesToLibrary(string arrayOfFiles[], int size, vector<Song>& library){
     }
 }
 
-bool checkIfArtistIsInLibrary(Library songLibrary, string artistName){
-    vector<Artist> artistsVector = songLibrary.getArtists();
+void addSongsToAlbum(Song library[], int librarySize, Library& songLibrary){
 
-    //Artist* artists = artistsVector.data();
-
-    for (int i=0; i<songLibrary.getVectorSize(); i++){
-        //if(artistName == artists[i].getArtistName()){
-            //cout << "here" << endl;
-        //    return true;
-        //} else {
-            //cout << "there" << endl;
-        //    return false;
-        //}
-    }
 }
 
 void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
-    for(int i=0; i<librarySize; i++){
-        if(songLibrary.getVectorSize() == 0){
-            Artist art(library[i].arist);
-            songLibrary.addArtist(art);
-        } else if (checkIfArtistIsInLibrary(songLibrary, library[i].arist)){
-            Artist art2(library[i].arist);
-            songLibrary.addArtist(art2);
-        }
+    Album temp("first album");
+
+    temp.addSong(library[0]);
+    temp.addSong(library[1]);
+    temp.addSong(library[2]);
+
+    int tempSize = temp.getArraySize();
+
+    for(int i=0; i<temp.getArraySize(); i++){
+        //cout << temp.getSongVector().at(i).fileLocation << endl;
     }
+
+    Library sampleLib;
+    sampleLib.addArtist(library[0].artist);
+    //cout << sampleLib.getArtists().at(0).getArtistName() << endl;
+
+    sampleLib.getArtists().at(0).addAlbum(library[0].artist);
+
+    Artist sampleArtist(library[0].artist);
+    Album sampleAlbum(library[0].album);
+    Song sampleSong(library[0]);
+    sampleAlbum.addSong(sampleSong);
+    sampleArtist.addAlbum(sampleAlbum);
+
+    //cout << sampleArtist.getAlbums().at(0).getSongVector().at(0).fileLocation << endl;
+
+    //cout << sampleAlbum.getAlbumTitle() << endl;
+
+    cout << sampleLib.getArtists().at(0).getAlbums().size() << endl;
+
+
+
+
     //cout << songLibrary.getArtists(). << endl;
     //use hashtables or map or multimap depending on what c++ calls it
 }
@@ -234,12 +277,6 @@ int main()
 
     string arrayOfFiles[v.size()];
     copy(v.begin(), v.end(), arrayOfFiles);
-
-    //FILE *sample;
-    //sample = fopen(arrayOfFiles[1].c_str(), "r");
-
-    //Song sampleSong;
-    //int readingPoint = getFileSize(sample);
 
     vector<Song> libraryVector;
     addFilesToLibrary(arrayOfFiles, v.size(), libraryVector);
