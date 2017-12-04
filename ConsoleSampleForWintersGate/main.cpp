@@ -233,6 +233,22 @@ void addFilesToLibrary(string arrayOfFiles[], int size, vector<Song>& library){
     }
 }
 
+bool checkIfSongIsInAlbum(vector<Album> albums, Song song){
+
+}
+
+bool checkIfAlbumIsInVector(vector<Album> albums, string albumName){
+    if(albums.size() == 0){
+        return false;
+    }
+    for(int i=0; i<albums.size(); i++){
+        if(albums.at(i).getAlbumTitle() == albumName){
+            return true;
+        }
+    }
+    return false;
+}
+
 void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     //Artist sampleArtist(library[0].artist);
     //Album sampleAlbum(library[0].album);
@@ -242,6 +258,13 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     //songLibrary.addArtist(sampleArtist);
     //cout << songLibrary.getArtists().at(0).getAlbums().at(0).getSongVector().at(0).fileLocation << endl;
 
+    vector<Artist> sample;
+    vector<Album> albumVector;
+
+    for(int i=0; i<librarySize; i++){
+
+    }
+
     for(int i=0; i<librarySize; i++){
 
         Song tempSong(library[i]);
@@ -249,11 +272,6 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
         Artist tempArtist(library[i].artist);
         tempAlbum.addSong(tempSong);
         tempArtist.addAlbum(tempAlbum);
-        if(songLibrary.getArtistVectorSize() == 0){
-            songLibrary.addArtist(tempArtist);
-        } else {
-
-        }
 
     }
 
