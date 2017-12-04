@@ -199,9 +199,6 @@ bool checkIfArtistIsInLibrary(Library songLibrary, string artistName){
 
     //Artist* artists = artistsVector.data();
 
-
-
-
     for (int i=0; i<songLibrary.getVectorSize(); i++){
         //if(artistName == artists[i].getArtistName()){
             //cout << "here" << endl;
@@ -218,15 +215,11 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
         if(songLibrary.getVectorSize() == 0){
             Artist art(library[i].arist);
             songLibrary.addArtist(art);
-
-
-
         } else if (checkIfArtistIsInLibrary(songLibrary, library[i].arist)){
             Artist art2(library[i].arist);
             songLibrary.addArtist(art2);
         }
     }
-
     //cout << songLibrary.getArtists(). << endl;
     //use hashtables or map or multimap depending on what c++ calls it
 }
