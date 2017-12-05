@@ -3372,3 +3372,11 @@
 	<boost/filesystem.hpp>
 	<windows.h>
 
+1512504606 source:c:\users\carl\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<boost/filesystem.hpp>
+	<windows.h>
+

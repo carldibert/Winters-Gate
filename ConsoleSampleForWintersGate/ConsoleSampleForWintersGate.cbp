@@ -17,11 +17,14 @@
 					<Add option="-Wall" />
 					<Add option="-std=c++11" />
 					<Add directory="C:/boost_1_65_1" />
+					<Add directory="../id3lib-3.8.3binaries/Release" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 					<Add library="C:/boost_1_65_1/stage/lib/libboost_system-mgw63-mt-1_65_1.a" />
 					<Add library="C:/boost_1_65_1/stage/lib/libboost_filesystem-mgw63-mt-1_65_1.a" />
+					<Add library="../id3lib-3.8.3binaries/Release/id3lib.lib" />
+					<Add directory="../id3lib-3.8.3binaries/Release" />
 				</Linker>
 			</Target>
 		</Build>

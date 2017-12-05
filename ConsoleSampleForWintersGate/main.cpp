@@ -7,6 +7,8 @@
 
 #include <windows.h>
 
+#include <id3/tag.h>
+
 using namespace std;
 using namespace boost::filesystem;
 
@@ -262,7 +264,14 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     vector<Album> albumVector;
 
     for(int i=0; i<librarySize; i++){
+        if(!checkIfAlbumIsInVector(albumVector, library[i].album)){
+            Album tempAlbum(library[i].album);
+            albumVector.push_back(tempAlbum);
+        }
+    }
 
+    for(int i=0; i<albumVector.size(); i++){
+        //cout << albumVector.at(i).getAlbumTitle() << endl;
     }
 
     for(int i=0; i<librarySize; i++){
@@ -275,7 +284,7 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
 
     }
 
-    cout << songLibrary.getArtistVectorSize() << endl;
+    //cout << songLibrary.getArtistVectorSize() << endl;
 
 
     //use hashtables or map or multimap depending on what c++ calls it
