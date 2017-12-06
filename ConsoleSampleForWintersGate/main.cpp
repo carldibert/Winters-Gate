@@ -262,14 +262,28 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     vector<Album> albumVector;
 
     for(int i=0; i<librarySize; i++){
+        string tempString = "";
+        if(library[i].album.length() > 29){
+            string albumString = library[i].album;
+            char *cstr = new char[albumString.length() + 1];
+            strcpy(cstr, albumString.c_str());
+            for(int j=0; j<29; j++){
+                tempString += cstr[j];
+            }
+        }
         if(!checkIfAlbumIsInVector(albumVector, library[i].album)){
-            Album tempAlbum(library[i].album);
-            albumVector.push_back(tempAlbum);
+            if(tempString == ""){
+                Album tempAlbum(library[i].album);
+                albumVector.push_back(tempAlbum);
+            } else {
+                Album tempAlbum(tempString);
+                albumVector.push_back(tempAlbum);
+            }
         }
     }
 
     for(int i=0; i<albumVector.size(); i++){
-        //cout << albumVector.at(i).getAlbumTitle() << endl;
+        cout << albumVector.at(i).getAlbumTitle() << endl;
     }
 
     for(int i=0; i<librarySize; i++){
@@ -292,9 +306,6 @@ int main()
 {
 
     string library_location = "C:\\Users\\Carl\\Music";
-
-
-
 
     stringvec v;
     read_directory(library_location, v);

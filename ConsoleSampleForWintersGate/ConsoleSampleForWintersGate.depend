@@ -3364,14 +3364,13 @@
 	<boost/filesystem.hpp>
 	<windows.h>
 
-1512523661 source:e:\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
+1512546712 source:e:\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
 	<iostream>
 	<fstream>
 	<string>
 	<vector>
 	<boost/filesystem.hpp>
 	<windows.h>
-	<ID3v2.h>
 
 1512504606 source:c:\users\carl\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
 	<iostream>
@@ -3814,4 +3813,58 @@
 1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wpub.h
 
 1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wxxx.h
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\tag.h
+	"taglib_export.h"
+	"tstring.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\taglib_export.h
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\tstring.h
+	"taglib_export.h"
+	"taglib.h"
+	"tbytevector.h"
+	<string>
+	<iostream>
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\taglib.h
+	"taglib_config.h"
+	<string>
+
+1511820614 e:\documents\github\winters-gate\taglib\include\taglib\taglib_config.h
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\tbytevector.h
+	"taglib.h"
+	"taglib_export.h"
+	<vector>
+	<iostream>
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\mpegfile.h
+	"taglib_export.h"
+	"tfile.h"
+	"tag.h"
+	"mpegproperties.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\tfile.h
+	"taglib_export.h"
+	"taglib.h"
+	"tag.h"
+	"tbytevector.h"
+	"tiostream.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\tiostream.h
+	"taglib_export.h"
+	"taglib.h"
+	"tbytevector.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\mpegproperties.h
+	"taglib_export.h"
+	"audioproperties.h"
+	"mpegheader.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\audioproperties.h
+	"taglib_export.h"
+
+1477278203 e:\documents\github\winters-gate\taglib\include\taglib\mpegheader.h
+	"taglib_export.h"
 
