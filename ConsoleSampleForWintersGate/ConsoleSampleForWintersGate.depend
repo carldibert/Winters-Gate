@@ -3364,13 +3364,14 @@
 	<boost/filesystem.hpp>
 	<windows.h>
 
-1512373931 source:e:\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
+1512523661 source:e:\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
 	<iostream>
 	<fstream>
 	<string>
 	<vector>
 	<boost/filesystem.hpp>
 	<windows.h>
+	<ID3v2.h>
 
 1512504606 source:c:\users\carl\documents\github\winters-gate\consolesampleforwintersgate\main.cpp
 	<iostream>
@@ -3379,4 +3380,438 @@
 	<vector>
 	<boost/filesystem.hpp>
 	<windows.h>
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2.h
+	<string>
+	<iostream>
+	<vector>
+	<ID3v2/ID3v2-Version.h>
+	<ID3v2/ID3v2-AbstractFrame.h>
+	<ID3v2/ID3v2-TextFrame.h>
+	<ID3v2/ID3v2-ExtendedHeader.h>
+	<ID3v2/ID3v2-Tag.h>
+	<ID3v2/Frame/ID3v2-Frame-Unknown.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-BUF.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-CNT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-COM.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-CRA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-CRM.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-EQU.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-ETC.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-GEO.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-IPL.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-LNK.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-MCI.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-MLL.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-PIC.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-POP.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-REV.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-RVA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-SLT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-STC.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TAL.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TBP.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TCM.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TCO.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TCR.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TDA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TDY.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TEN.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TFT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TIM.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TKE.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TLA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TLE.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TMT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TOA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TOF.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TOL.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TOR.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TOT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TP1.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TP2.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TP3.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TP4.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TPA.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TPB.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TRC.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TRD.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TRK.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TSI.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TSS.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TT1.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TT2.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TT3.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TXT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TXX.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-TYE.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-UFI.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-ULT.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WAF.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WAR.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WAS.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WCM.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WCP.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WPB.h>
+	<ID3v2/Frame/v22/ID3v2-Frame-WXX.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-AENC.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-APIC.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-COMM.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-COMR.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-ENCR.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-EQUA.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-ETCO.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-GEOB.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-GRID.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-IPLS.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-LINK.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-MCDI.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-MLLT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-OWNE.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-PCNT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-POPM.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-POSS.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-PRIV.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-RBUF.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-RVAD.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-RVRB.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-SYLT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-SYTC.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TALB.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TBPM.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TCOM.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TCON.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TCOP.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TDAT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TDLY.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TENC.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TEXT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TFLT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TIME.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TIT1.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TIT2.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TIT3.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TKEY.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TLAN.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TLEN.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TMED.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TOAL.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TOFN.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TOLY.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TOPE.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TORY.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TOWN.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPE1.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPE2.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPE3.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPE4.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPOS.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TPUB.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TRCK.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TRDA.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TRSN.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TRSO.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TSIZ.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TSRC.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TSSE.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TXXX.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-TYER.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-UFID.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-USER.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-USLT.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WCOM.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WCOP.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WOAF.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WOAR.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WOAS.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WORS.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WPAY.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WPUB.h>
+	<ID3v2/Frame/v23/ID3v2-Frame-WXXX.h>
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\id3v2-version.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\id3v2-abstractframe.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\id3v2-textframe.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\id3v2-extendedheader.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\id3v2-tag.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\id3v2-frame-unknown.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-buf.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-cnt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-com.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-cra.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-crm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-equ.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-etc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-geo.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-ipl.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-lnk.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-mci.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-mll.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-pic.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-pop.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-rev.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-rva.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-slt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-stc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tal.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tbp.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tcm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tco.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tcr.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tda.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tdy.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-ten.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tft.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tim.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tke.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tla.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tle.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tmt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-toa.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tof.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tol.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tor.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tot.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tp1.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tp2.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tp3.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tp4.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tpa.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tpb.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-trc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-trd.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-trk.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tsi.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tss.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tt1.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tt2.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tt3.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-txt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-txx.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-tye.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-ufi.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-ult.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-waf.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-war.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-was.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-wcm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-wcp.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-wpb.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v22\id3v2-frame-wxx.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-aenc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-apic.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-comm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-comr.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-encr.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-equa.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-etco.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-geob.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-grid.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-ipls.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-link.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-mcdi.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-mllt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-owne.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-pcnt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-popm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-poss.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-priv.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-rbuf.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-rvad.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-rvrb.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-sylt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-sytc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-talb.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tbpm.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tcom.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tcon.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tcop.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tdat.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tdly.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tenc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-text.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tflt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-time.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tit1.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tit2.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tit3.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tkey.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tlan.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tlen.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tmed.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-toal.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tofn.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-toly.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tope.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tory.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-town.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpe1.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpe2.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpe3.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpe4.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpos.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tpub.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-trck.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-trda.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-trsn.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-trso.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tsiz.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tsrc.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tsse.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-txxx.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-tyer.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-ufid.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-user.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-uslt.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wcom.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wcop.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-woaf.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-woar.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-woas.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wors.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wpay.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wpub.h
+
+1512520594 e:\documents\github\winters-gate\id3v2\include\id3v2\frame\v23\id3v2-frame-wxxx.h
 

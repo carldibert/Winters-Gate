@@ -7,8 +7,6 @@
 
 #include <windows.h>
 
-#include <id3/tag.h>
-
 using namespace std;
 using namespace boost::filesystem;
 
@@ -294,6 +292,9 @@ int main()
 {
 
     string library_location = "C:\\Users\\Carl\\Music";
+
+
+
 
     stringvec v;
     read_directory(library_location, v);
