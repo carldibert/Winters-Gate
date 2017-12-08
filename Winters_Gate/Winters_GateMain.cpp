@@ -9,15 +9,13 @@
 
 #include "Winters_GateMain.h"
 #include <wx/msgdlg.h>
-#include <portaudio.h>
+#include <wx/intl.h>
 #include <boost/filesystem.hpp>
 #include <fstream>
 #include <string>
 #include <vector>
 #include <windows.h>
 #include <stdlib.h>
-#include <portaudio.h>
-#include <SFML/Audio.hpp>
 //(*InternalHeaders(Winters_GateDialog)
 #include <wx/intl.h>
 #include <wx/string.h>
@@ -84,8 +82,9 @@ Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
     SetMaxSize(wxSize(-1,-1));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer2 = new wxBoxSizer(wxVERTICAL);
-    ListBox2 = new wxListBox(this, ID_LISTBOX2, wxDefaultPosition, wxSize(338,274), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX2"));
-    BoxSizer2->Add(ListBox2, 10, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    LibraryListBox = new wxListBox(this, ID_LISTBOX2, wxDefaultPosition, wxSize(338,274), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX2"));
+    LibraryListBox->Append(_("sample"));
+    BoxSizer2->Add(LibraryListBox, 10, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer3 = new wxBoxSizer(wxVERTICAL);
     BoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
@@ -103,6 +102,7 @@ Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
     SetSizer(BoxSizer1);
     Layout();
     Center();
+    PopulateListBox();
 
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Winters_GateDialog::OnQuit);
     //*)
@@ -122,57 +122,64 @@ void Winters_GateDialog::OnQuit(wxCommandEvent& event)
     //sf::SoundBuffer buffer;
     //if(!buffer.loadFromFile("K:\\Sample Library\\FLAC\\Amorphis\\Albums\\(2015) Under the Red Cloud\\01 Under the Red Cloud.flac"));
 
-    wstring stemp = wstring("K:\\Sample Library\\03 Dreamwalkers.wav".begin(), "K:\\Sample Library\\03 Dreamwalkers.wav".end());
-    const wchar_t* zname = stemp.c_str();
+    //string fileName = "C:\\";
+    //wstring stemp = wstring(fileName.begin(), fileName.end());
+    //const wchar_t* zname = stemp.c_str();
 
-    PlaySound(zname, NULL, SND_FILENAME);
+
+    //PlaySound(zname, NULL, SND_FILENAME);
 
 }
 
 //reads from directory and adds all files to a vector if the file is a mp3 file
 void read_directory(const std::string& name, stringvec& v){
-    //string pattern(name);
-    //pattern.append("\\*");
-    //WIN32_FIND_DATA data;
-    //HANDLE hFind;
-    //string file_location;
-    //string file_location_explicit;
-    //string file_location_parent;
-    //wstring stemp = wstring(pattern.begin(), pattern.end());
-    //const wchar_t* zname = stemp.c_str();
-    //hFind = FindFirstFile(zname, &data);
-    //if (hFind != INVALID_HANDLE_VALUE){
-        //do {
-            //file_location = name + "\\" + data.cFileName;
-            //file_location.append(name);
-            //file_location.append("\\");
-            //file_location += data.cFileName;
-            //data.cFileName
-            //file_location.append(data.cFileName);
-            //file_location_explicit = name + "\\.";
-            //file_location_parent = name + "\\..";
+    std::string pattern(name);
+    pattern.append("\\*");
+    WIN32_FIND_DATA data;
+    HANDLE hFind;
+    string file_location;
+    string file_location_explicit;
+    string file_location_parent;
+    if ((hFind = FindFirstFile(pattern.c_str(), &data)) != INVALID_HANDLE_VALUE){
+        do {
 
-            //path dir = file_location;
+                 ostringstream convert;
 
-            //if(is_directory(dir) && file_location == file_location_explicit){
-            //} else if(is_directory(dir) && file_location == file_location_parent){
-            //} else if(is_directory(dir)){
-                //read_directory(file_location, v);
-            //} else {
+            convert <<name <<"\\"<<data.cFileName;
+            file_location = convert.str();
+            file_location_explicit = name + "\\.";
+            file_location_parent = name + "\\..";
+
+            path dir = file_location;
+
+            if(is_directory(dir) && file_location == file_location_explicit){
+            } else if(is_directory(dir) && file_location == file_location_parent){
+            } else if(is_directory(dir)){
+                read_directory(file_location, v);
+            } else {
                 //if(checkIfMP3(file_location)){
-                    //v.push_back(file_location);
+                    v.push_back(file_location);
                 //}
-            //}
-        //}while(FindNextFile(hFind, &data) != 0);
-        //FindClose(hFind);
-        //}
-    //};
+            }
+        }while(FindNextFile(hFind, &data) != 0);
+        FindClose(hFind);
+    }
 }
 //populates the library with all of the files
 void Winters_GateDialog::PopulateListBox(){
     string library_location = "C:\\Users\\Carl\\Music";
     stringvec v;
     read_directory(library_location, v);
+
+    int sizeOf = v.size();
+    string stringStuff = v.at(0);
+    wxString x = wxString::FromUTF8(stringStuff);
+
+    LibraryListBox->Append(_("sample"));
+
+    //for(int i=0; i<sizeOf; i++){
+        //LibraryListBox->Append(_(v.at(i)));
+    //}
 }
 
 void Winters_GateDialog::OnAbout(wxCommandEvent& event)

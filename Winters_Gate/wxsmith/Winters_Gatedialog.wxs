@@ -10,7 +10,10 @@
 				<object class="wxBoxSizer" variable="BoxSizer2" member="no">
 					<orient>wxVERTICAL</orient>
 					<object class="sizeritem">
-						<object class="wxListBox" name="ID_LISTBOX2" variable="ListBox2" member="yes">
+						<object class="wxListBox" name="ID_LISTBOX2" variable="LibraryListBox" member="yes">
+							<content>
+								<item>sample</item>
+							</content>
 							<default>-1</default>
 							<size>338,274</size>
 						</object>

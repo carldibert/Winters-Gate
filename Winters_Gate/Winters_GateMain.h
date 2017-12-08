@@ -10,6 +10,11 @@
 #ifndef WINTERS_GATEMAIN_H
 #define WINTERS_GATEMAIN_H
 
+#include<cstring>
+#include <sstream>
+
+using namespace std;
+
 //(*Headers(Winters_GateDialog)
 #include <wx/sizer.h>
 #include <wx/stattext.h>
@@ -46,7 +51,7 @@ class Winters_GateDialog: public wxDialog
         wxButton* Button1;
         wxStaticText* StaticText1;
         wxButton* Button2;
-        wxListBox* ListBox2;
+        wxListBox* LibraryListBox;
         wxListBox* ListBox1;
         //*)
 

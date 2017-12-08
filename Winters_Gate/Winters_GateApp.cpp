@@ -8,6 +8,8 @@
  **************************************************************/
 
 #include "Winters_GateApp.h"
+#include<cstring>
+#include <sstream>
 
 //(*AppHeaders
 #include "Winters_GateMain.h"

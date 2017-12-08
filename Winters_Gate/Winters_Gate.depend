@@ -8922,3 +8922,39 @@
 	<boost/config/abi_prefix.hpp>
 	<boost/config/abi_suffix.hpp>
 
+1512752585 source:c:\users\carl\documents\github\winters-gate\winters_gate\resource.rc
+	"wx/msw/wx.rc"
+
+1512754132 source:c:\users\carl\documents\github\winters-gate\winters_gate\winters_gateapp.cpp
+	"Winters_GateApp.h"
+	<cstring>
+	<sstream>
+	"Winters_GateMain.h"
+	<wx/image.h>
+
+1512752582 c:\users\carl\documents\github\winters-gate\winters_gate\winters_gateapp.h
+	<wx/app.h>
+
+1300795256 c:\wxwidgets-2.8.12\lib\gcc_dll\mswu\wx\setup.h
+
+1512754582 c:\users\carl\documents\github\winters-gate\winters_gate\winters_gatemain.h
+	<cstring>
+	<sstream>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/listbox.h>
+	<wx/button.h>
+	<wx/dialog.h>
+
+1512754827 source:c:\users\carl\documents\github\winters-gate\winters_gate\winters_gatemain.cpp
+	"Winters_GateMain.h"
+	<wx/msgdlg.h>
+	<boost/filesystem.hpp>
+	<fstream>
+	<string>
+	<vector>
+	<windows.h>
+	<stdlib.h>
+	<wx/intl.h>
+	<wx/string.h>
+
