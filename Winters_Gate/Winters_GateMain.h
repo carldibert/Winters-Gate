@@ -11,12 +11,9 @@
 #define WINTERS_GATEMAIN_H
 
 //(*Headers(Winters_GateDialog)
-#include <wx/treectrl.h>
 #include <wx/sizer.h>
 #include <wx/stattext.h>
-#include <wx/textctrl.h>
 #include <wx/listbox.h>
-#include <wx/statbmp.h>
 #include <wx/button.h>
 #include <wx/dialog.h>
 //*)
@@ -34,25 +31,22 @@ class Winters_GateDialog: public wxDialog
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
         void OnLibrary_List_BoxSelect(wxCommandEvent& event);
-        void OnTextCtrl1Text(wxCommandEvent& event);
-        void OnTreeCtrl1BeginDrag(wxTreeEvent& event);
+        void PopulateListBox();
         //*)
 
         //(*Identifiers(Winters_GateDialog)
-        static const long ID_TREECTRL1;
-        static const long ID_TEXTCTRL1;
-        static const long ID_BUTTON1;
+        static const long ID_LISTBOX2;
         static const long ID_STATICTEXT1;
-        static const long ID_STATICBITMAP1;
+        static const long ID_BUTTON2;
         static const long ID_LISTBOX1;
+        static const long ID_BUTTON1;
         //*)
 
         //(*Declarations(Winters_GateDialog)
         wxButton* Button1;
-        wxStaticBitmap* StaticBitmap1;
         wxStaticText* StaticText1;
-        wxTreeCtrl* TreeCtrl1;
-        wxTextCtrl* TextCtrl1;
+        wxButton* Button2;
+        wxListBox* ListBox2;
         wxListBox* ListBox1;
         //*)
 

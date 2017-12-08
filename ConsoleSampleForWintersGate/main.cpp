@@ -297,7 +297,7 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
         }
     }
 
-    cout << albumVector.at(0).getSongVector().size() << endl;
+    //cout << albumVector.at(0).getSongVector().size() << endl;
 
 
 

@@ -14,7 +14,11 @@
 				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-DSFML_STATIC" />
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll/mswu" />
+					<Add directory="dependencies/boost_1_65_1" />
+					<Add directory="dependencies/portaudio/include" />
+					<Add directory="dependencies/SFML-2.4.2/include" />
 				</Compiler>
 				<ResourceCompiler>
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll/mswu" />
@@ -25,7 +29,18 @@
 					<Add library="libwxbase28u.a" />
 					<Add library="libwxpng.a" />
 					<Add library="libwxzlib.a" />
+					<Add library="dependencies/boost_1_65_1/stage/lib/libboost_filesystem-mgw63-mt-1_65_1.a" />
+					<Add library="dependencies/boost_1_65_1/stage/lib/libboost_system-mgw63-mt-1_65_1.a" />
+					<Add library="dependencies/portaudio/lib/.libs/libportaudio.dll.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libsfml-system.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libopenal32.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libFLAC.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libvorbisenc.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libvorbisfile.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libvorbis.a" />
+					<Add library="dependencies/SFML-2.4.2/lib/libogg.a" />
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll" />
+					<Add directory="dependencies/SFML-2.4.2/lib" />
 				</Linker>
 			</Target>
 		</Build>

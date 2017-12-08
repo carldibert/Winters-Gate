@@ -3,67 +3,20 @@
 	<object class="wxDialog" name="Winters_GateDialog">
 		<title>Winter&apos;s Gate</title>
 		<centered>1</centered>
-		<size>516,311</size>
+		<size>716,602</size>
 		<maxsize>-1,-1</maxsize>
 		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
 			<object class="sizeritem">
 				<object class="wxBoxSizer" variable="BoxSizer2" member="no">
 					<orient>wxVERTICAL</orient>
 					<object class="sizeritem">
-						<object class="wxTreeCtrl" name="ID_TREECTRL1" variable="TreeCtrl1" member="yes">
-							<image_list>&lt;none&gt;</image_list>
-							<tree_items>
-								<item>TreeCtrl1</item>
-								<item>&lt;none&gt;</item>
-								<item>0,#000000,0,-1,-1,-1,-1,root</item>
-								<item>1,#000000,0,-1,-1,-1,-1,item 1</item>
-								<item>1,#000000,0,-1,-1,-1,-1,item 2</item>
-								<item>1,#000000,0,-1,-1,-1,-1,item 3</item>
-								<item>1,#000000,0,-1,-1,-1,-1,item 4</item>
-								<item>2,#000000,0,-1,-1,-1,-1,item 5</item>
-								<item>2,#000000,0,-1,-1,-1,-1,item 6</item>
-							</tree_items>
-							<items_text>
-								<item2>TreeCtrl1</item2>
-								<item2>&lt;none&gt;</item2>
-								<item2>0,#000000,0,-1,-1,-1,-1,root</item2>
-								<item2>1,#000000,0,-1,-1,-1,-1,item 1</item2>
-								<item2>1,#000000,0,-1,-1,-1,-1,item 2</item2>
-								<item2>1,#000000,0,-1,-1,-1,-1,item 3</item2>
-								<item2>1,#000000,0,-1,-1,-1,-1,item 4</item2>
-								<item2>2,#000000,0,-1,-1,-1,-1,item 5</item2>
-								<item2>2,#000000,0,-1,-1,-1,-1,item 6</item2>
-							</items_text>
-							<size>239,248</size>
-							<style>wxTR_LINES_AT_ROOT|wxTR_HIDE_ROOT|wxTR_DEFAULT_STYLE</style>
+						<object class="wxListBox" name="ID_LISTBOX2" variable="ListBox2" member="yes">
+							<default>-1</default>
+							<size>338,274</size>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
-						<option>6</option>
-					</object>
-					<object class="sizeritem">
-						<object class="wxBoxSizer" variable="BoxSizer7" member="no">
-							<object class="sizeritem">
-								<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="TextCtrl1" member="yes">
-									<tooltip>Filter</tooltip>
-									<help>Filter</help>
-								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>2</option>
-							</object>
-							<object class="sizeritem">
-								<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
-									<label>Filter</label>
-								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>1</option>
-							</object>
-						</object>
-						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-						<border>5</border>
-						<option>1</option>
+						<option>10</option>
 					</object>
 				</object>
 				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -78,18 +31,19 @@
 							<object class="sizeritem">
 								<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
 									<label>Artist&#x0A;Album&#x0A;Track&#x0A;Year&#x0A;Track Number&#x0A;Comment</label>
+									<size>182,78</size>
 								</object>
 								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 								<border>5</border>
-								<option>10</option>
+								<option>2</option>
 							</object>
 							<object class="sizeritem">
-								<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-									<size>67,72</size>
+								<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+									<label>Label</label>
 								</object>
 								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 								<border>5</border>
-								<option>5</option>
+								<option>1</option>
 							</object>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -99,11 +53,20 @@
 					<object class="sizeritem">
 						<object class="wxListBox" name="ID_LISTBOX1" variable="ListBox1" member="yes">
 							<default>-1</default>
-							<size>241,186</size>
+							<size>303,186</size>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>2</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+							<label>Sample Play Button</label>
+							<handler function="OnQuit" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
 					</object>
 				</object>
 				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
