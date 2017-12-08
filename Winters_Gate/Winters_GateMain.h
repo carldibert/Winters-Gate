@@ -35,6 +35,7 @@ class Winters_GateDialog: public wxDialog
         void OnAbout(wxCommandEvent& event);
         void OnLibrary_List_BoxSelect(wxCommandEvent& event);
         void OnTextCtrl1Text(wxCommandEvent& event);
+        void OnTreeCtrl1BeginDrag(wxTreeEvent& event);
         //*)
 
         //(*Identifiers(Winters_GateDialog)

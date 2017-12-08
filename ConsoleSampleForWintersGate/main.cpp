@@ -261,6 +261,7 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     vector<Artist> sample;
     vector<Album> albumVector;
 
+    //makes a list of all of the albums
     for(int i=0; i<librarySize; i++){
         string tempString = "";
         if(library[i].album.length() > 29){
@@ -271,20 +272,34 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
                 tempString += cstr[j];
             }
         }
-        if(!checkIfAlbumIsInVector(albumVector, library[i].album)){
-            if(tempString == ""){
-                Album tempAlbum(library[i].album);
-                albumVector.push_back(tempAlbum);
-            } else {
-                Album tempAlbum(tempString);
-                albumVector.push_back(tempAlbum);
-            }
-        }
+        //if(!checkIfAlbumIsInVector(albumVector, library[i].album)){
+            //if(tempString == ""){
+                //Album tempAlbum(library[i].album);
+                //albumVector.push_back(tempAlbum);
+            //} else {
+                //Album tempAlbum(tempString);
+                //albumVector.push_back(tempAlbum);
+            //}
+        //}
+
+        Album tempAlbum(library[i].album);
+        albumVector.push_back(tempAlbum);
+
     }
 
     for(int i=0; i<albumVector.size(); i++){
-        cout << albumVector.at(i).getAlbumTitle() << endl;
+        cout << albumVector.at(i).getAlbumTitle() << " " << i << endl;
     }
+
+    for(int i=0; i<librarySize; i++){
+        if(library[i].album == albumVector.at(i).getAlbumTitle()){
+            albumVector.at(i).addSong(library[i]);
+        }
+    }
+
+    cout << albumVector.at(0).getSongVector().size() << endl;
+
+
 
     for(int i=0; i<librarySize; i++){
 

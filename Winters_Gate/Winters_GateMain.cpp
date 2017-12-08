@@ -10,10 +10,14 @@
 #include "Winters_GateMain.h"
 #include <wx/msgdlg.h>
 #include <portaudio.h>
+#include <boost/filesystem.hpp>
 //(*InternalHeaders(Winters_GateDialog)
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
+
+using namespace std;
+using namespace boost::filesystem;
 
 //helper functions
 enum wxbuildinfoformat {
@@ -55,6 +59,10 @@ BEGIN_EVENT_TABLE(Winters_GateDialog,wxDialog)
     //*)
 END_EVENT_TABLE()
 
+void makeBoxes(){
+
+}
+
 Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(Winters_GateDialog)
@@ -75,8 +83,12 @@ Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
     wxTreeItemId TreeCtrl1_Item3 = TreeCtrl1->AppendItem(TreeCtrl1_Item1, _T("item 2"));
     wxTreeItemId TreeCtrl1_Item4 = TreeCtrl1->AppendItem(TreeCtrl1_Item1, _T("item 3"));
     wxTreeItemId TreeCtrl1_Item5 = TreeCtrl1->AppendItem(TreeCtrl1_Item1, _T("item 4"));
-    wxTreeItemId TreeCtrl1_Item6 = TreeCtrl1->AppendItem(TreeCtrl1_Item5, _T("item 5"));
-    wxTreeItemId TreeCtrl1_Item7 = TreeCtrl1->AppendItem(TreeCtrl1_Item5, _T("item 6"));
+    wxTreeItemId TreeCtrl1_Item6 = TreeCtrl1->AppendItem(TreeCtrl1_Item1, _T("item 5"));
+    for(int i=0; i<3; i++){
+        wxTreeItemId TreeCtrl1_Item6 = TreeCtrl1->AppendItem(TreeCtrl1_Item1, _T("item 5"));
+    }
+
+    makeBoxes();
     TreeCtrl1->ScrollTo(TreeCtrl1_Item2);
     BoxSizer2->Add(TreeCtrl1, 6, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
@@ -98,10 +110,13 @@ Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
     ListBox1 = new wxListBox(this, ID_LISTBOX1, wxDefaultPosition, wxSize(241,186), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX1"));
     BoxSizer3->Add(ListBox1, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+
     SetSizer(BoxSizer1);
     SetSizer(BoxSizer1);
     Layout();
     Center();
+
+    Connect(ID_TREECTRL1,wxEVT_COMMAND_TREE_BEGIN_DRAG,(wxObjectEventFunction)&Winters_GateDialog::OnTreeCtrl1BeginDrag);
     //*)
 }
 
@@ -127,5 +142,9 @@ void Winters_GateDialog::OnLibrary_List_BoxSelect(wxCommandEvent& event)
 }
 
 void Winters_GateDialog::OnTextCtrl1Text(wxCommandEvent& event)
+{
+}
+
+void Winters_GateDialog::OnTreeCtrl1BeginDrag(wxTreeEvent& event)
 {
 }
