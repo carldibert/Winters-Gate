@@ -2427,32 +2427,35 @@
 1512356620 source:e:\documents\github\winters-gate\winters_gate\resource.rc
 	"wx/msw/wx.rc"
 
-1512356620 source:e:\documents\github\winters-gate\winters_gate\winters_gateapp.cpp
+1512775973 source:e:\documents\github\winters-gate\winters_gate\winters_gateapp.cpp
 	"Winters_GateApp.h"
+	<cstring>
+	<sstream>
 	"Winters_GateMain.h"
 	<wx/image.h>
 
 1512356620 e:\documents\github\winters-gate\winters_gate\winters_gateapp.h
 	<wx/app.h>
 
-1512707174 e:\documents\github\winters-gate\winters_gate\winters_gatemain.h
+1512778073 e:\documents\github\winters-gate\winters_gate\winters_gatemain.h
+	<cstring>
+	<sstream>
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/listbox.h>
 	<wx/button.h>
 	<wx/dialog.h>
 
-1512715494 source:e:\documents\github\winters-gate\winters_gate\winters_gatemain.cpp
+1512778318 source:e:\documents\github\winters-gate\winters_gate\winters_gatemain.cpp
 	"Winters_GateMain.h"
 	<wx/msgdlg.h>
-	<portaudio.h>
+	<wx/intl.h>
 	<boost/filesystem.hpp>
 	<fstream>
 	<string>
 	<vector>
 	<windows.h>
 	<stdlib.h>
-	<portaudio.h>
 	<wx/intl.h>
 	<wx/string.h>
 

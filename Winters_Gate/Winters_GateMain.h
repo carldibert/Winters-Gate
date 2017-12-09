@@ -10,7 +10,7 @@
 #ifndef WINTERS_GATEMAIN_H
 #define WINTERS_GATEMAIN_H
 
-#include<cstring>
+#include <cstring>
 #include <sstream>
 
 using namespace std;
@@ -37,22 +37,24 @@ class Winters_GateDialog: public wxDialog
         void OnAbout(wxCommandEvent& event);
         void OnLibrary_List_BoxSelect(wxCommandEvent& event);
         void PopulateListBox();
+        void OnLibraryListBoxDClick(wxCommandEvent& event);
+        void OnLibraryListBoxSelect(wxCommandEvent& event);
+        void StopButtonOnClick(wxCommandEvent& event);
+        void PauseButtonOnClick(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(Winters_GateDialog)
         static const long ID_LISTBOX2;
         static const long ID_STATICTEXT1;
         static const long ID_BUTTON2;
-        static const long ID_LISTBOX1;
         static const long ID_BUTTON1;
         //*)
 
         //(*Declarations(Winters_GateDialog)
-        wxButton* Button1;
         wxStaticText* StaticText1;
-        wxButton* Button2;
+        wxButton* PauseButton;
+        wxButton* StopButton;
         wxListBox* LibraryListBox;
-        wxListBox* ListBox1;
         //*)
 
         DECLARE_EVENT_TABLE()

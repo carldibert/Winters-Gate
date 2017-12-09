@@ -56,7 +56,6 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 const long Winters_GateDialog::ID_LISTBOX2 = wxNewId();
 const long Winters_GateDialog::ID_STATICTEXT1 = wxNewId();
 const long Winters_GateDialog::ID_BUTTON2 = wxNewId();
-const long Winters_GateDialog::ID_LISTBOX1 = wxNewId();
 const long Winters_GateDialog::ID_BUTTON1 = wxNewId();
 //*)
 
@@ -72,39 +71,36 @@ void makeBoxes(){
 Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(Winters_GateDialog)
-    wxBoxSizer* BoxSizer4;
     wxBoxSizer* BoxSizer2;
     wxBoxSizer* BoxSizer1;
     wxBoxSizer* BoxSizer3;
 
-    Create(parent, id, _("Winter\'s Gate"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("id"));
-    SetClientSize(wxSize(716,602));
+    Create(parent, wxID_ANY, _("Winter\'s Gate"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
     SetMaxSize(wxSize(-1,-1));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer2 = new wxBoxSizer(wxVERTICAL);
-    LibraryListBox = new wxListBox(this, ID_LISTBOX2, wxDefaultPosition, wxSize(338,274), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX2"));
-    LibraryListBox->Append(_("sample"));
-    BoxSizer2->Add(LibraryListBox, 10, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxSizer1->Add(BoxSizer2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    LibraryListBox = new wxListBox(this, ID_LISTBOX2, wxDefaultPosition, wxSize(650,353), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX2"));
+    BoxSizer2->Add(LibraryListBox, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxSizer1->Add(BoxSizer2, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer3 = new wxBoxSizer(wxVERTICAL);
-    BoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Artist\nAlbum\nTrack\nYear\nTrack Number\nComment"), wxDefaultPosition, wxSize(182,78), 0, _T("ID_STATICTEXT1"));
-    BoxSizer4->Add(StaticText1, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    Button2 = new wxButton(this, ID_BUTTON2, _("Label"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-    BoxSizer4->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxSizer3->Add(BoxSizer4, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    ListBox1 = new wxListBox(this, ID_LISTBOX1, wxDefaultPosition, wxSize(303,186), 0, 0, 0, wxDefaultValidator, _T("ID_LISTBOX1"));
-    BoxSizer3->Add(ListBox1, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    Button1 = new wxButton(this, ID_BUTTON1, _("Sample Play Button"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-    BoxSizer3->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Artist\nAlbum\nTitle\nYear\n"), wxDefaultPosition, wxSize(265,186), 0, _T("ID_STATICTEXT1"));
+    BoxSizer3->Add(StaticText1, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    PauseButton = new wxButton(this, ID_BUTTON2, _("Pause"), wxDefaultPosition, wxSize(114,88), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+    BoxSizer3->Add(PauseButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StopButton = new wxButton(this, ID_BUTTON1, _("Stop"), wxDefaultPosition, wxSize(111,49), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    BoxSizer3->Add(StopButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
-    SetSizer(BoxSizer1);
-    Layout();
+    BoxSizer1->Fit(this);
+    BoxSizer1->SetSizeHints(this);
     Center();
+
     PopulateListBox();
 
-    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Winters_GateDialog::OnQuit);
+    Connect(ID_LISTBOX2,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&Winters_GateDialog::OnLibraryListBoxSelect);
+    Connect(ID_LISTBOX2,wxEVT_COMMAND_LISTBOX_DOUBLECLICKED,(wxObjectEventFunction)&Winters_GateDialog::OnLibraryListBoxDClick);
+    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Winters_GateDialog::PauseButtonOnClick);
+    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Winters_GateDialog::StopButtonOnClick);
     //*)
 }
 
@@ -114,21 +110,28 @@ Winters_GateDialog::~Winters_GateDialog()
     //*)
 }
 
-void Winters_GateDialog::OnQuit(wxCommandEvent& event)
-{
+//action for the Pause Button
+void Winters_GateDialog::PauseButtonOnClick(wxCommandEvent& event){
+
+}
+
+//action for the Stop Button
+void Winters_GateDialog::StopButtonOnClick(wxCommandEvent& event){
     wxString myString = wxString::FromUTF8("Changed");
-    StaticText1->SetLabel(myString);
+    const char* chars = "hello";
+    wxString newString = wxString::FromUTF8(chars);
+    StaticText1->SetLabel(newString);
+}
 
-    //sf::SoundBuffer buffer;
-    //if(!buffer.loadFromFile("K:\\Sample Library\\FLAC\\Amorphis\\Albums\\(2015) Under the Red Cloud\\01 Under the Red Cloud.flac"));
-
-    //string fileName = "C:\\";
-    //wstring stemp = wstring(fileName.begin(), fileName.end());
-    //const wchar_t* zname = stemp.c_str();
-
-
-    //PlaySound(zname, NULL, SND_FILENAME);
-
+//checks if file is a .mp3 file
+bool checkIfMP3(string fileLocation){
+    int fileNameLength = fileLocation.length() - 4;
+    string fileType = fileLocation.substr(fileNameLength, 4);
+    if(fileType == ".mp3"){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //reads from directory and adds all files to a vector if the file is a mp3 file
@@ -142,9 +145,7 @@ void read_directory(const std::string& name, stringvec& v){
     string file_location_parent;
     if ((hFind = FindFirstFile(pattern.c_str(), &data)) != INVALID_HANDLE_VALUE){
         do {
-
-                 ostringstream convert;
-
+            ostringstream convert;
             convert <<name <<"\\"<<data.cFileName;
             file_location = convert.str();
             file_location_explicit = name + "\\.";
@@ -157,14 +158,15 @@ void read_directory(const std::string& name, stringvec& v){
             } else if(is_directory(dir)){
                 read_directory(file_location, v);
             } else {
-                //if(checkIfMP3(file_location)){
+                if(checkIfMP3(file_location)){
                     v.push_back(file_location);
-                //}
+                }
             }
         }while(FindNextFile(hFind, &data) != 0);
         FindClose(hFind);
     }
 }
+
 //populates the library with all of the files
 void Winters_GateDialog::PopulateListBox(){
     string library_location = "C:\\Users\\Carl\\Music";
@@ -172,22 +174,22 @@ void Winters_GateDialog::PopulateListBox(){
     read_directory(library_location, v);
 
     int sizeOf = v.size();
-    string stringStuff = v.at(0);
-    wxString x = wxString::FromUTF8(stringStuff);
 
-    LibraryListBox->Append(_("sample"));
-
-    //for(int i=0; i<sizeOf; i++){
-        //LibraryListBox->Append(_(v.at(i)));
-    //}
+    for(int i=0; i<sizeOf; i++){
+        string stringStuff = v.at(i);
+        const char* chars = stringStuff.c_str();
+        wxString wxStringItem = wxString::FromUTF8(chars);
+        LibraryListBox->Append(wxStringItem);
+    }
 }
 
-void Winters_GateDialog::OnAbout(wxCommandEvent& event)
-{
-    wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
-}
-
-void Winters_GateDialog::OnLibrary_List_BoxSelect(wxCommandEvent& event)
+void Winters_GateDialog::OnLibraryListBoxSelect(wxCommandEvent& event)
 {
 }
+
+void Winters_GateDialog::OnLibraryListBoxDClick(wxCommandEvent& event)
+{
+}
+
+
+

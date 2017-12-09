@@ -3,72 +3,59 @@
 	<object class="wxDialog" name="Winters_GateDialog">
 		<title>Winter&apos;s Gate</title>
 		<centered>1</centered>
-		<size>716,602</size>
 		<maxsize>-1,-1</maxsize>
+		<id_arg>0</id_arg>
 		<object class="wxBoxSizer" variable="BoxSizer1" member="no">
 			<object class="sizeritem">
 				<object class="wxBoxSizer" variable="BoxSizer2" member="no">
 					<orient>wxVERTICAL</orient>
 					<object class="sizeritem">
 						<object class="wxListBox" name="ID_LISTBOX2" variable="LibraryListBox" member="yes">
-							<content>
-								<item>sample</item>
-							</content>
 							<default>-1</default>
-							<size>338,274</size>
-						</object>
-						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-						<border>5</border>
-						<option>10</option>
-					</object>
-				</object>
-				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-				<border>5</border>
-				<option>1</option>
-			</object>
-			<object class="sizeritem">
-				<object class="wxBoxSizer" variable="BoxSizer3" member="no">
-					<orient>wxVERTICAL</orient>
-					<object class="sizeritem">
-						<object class="wxBoxSizer" variable="BoxSizer4" member="no">
-							<object class="sizeritem">
-								<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
-									<label>Artist&#x0A;Album&#x0A;Track&#x0A;Year&#x0A;Track Number&#x0A;Comment</label>
-									<size>182,78</size>
-								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>2</option>
-							</object>
-							<object class="sizeritem">
-								<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
-									<label>Label</label>
-								</object>
-								<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
-								<border>5</border>
-								<option>1</option>
-							</object>
+							<size>650,353</size>
+							<handler function="OnLibraryListBoxSelect" entry="EVT_LISTBOX" />
+							<handler function="OnLibraryListBoxDClick" entry="EVT_LISTBOX_DCLICK" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>1</option>
 					</object>
+				</object>
+				<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+				<border>5</border>
+				<option>2</option>
+			</object>
+			<object class="sizeritem">
+				<object class="wxBoxSizer" variable="BoxSizer3" member="no">
+					<orient>wxVERTICAL</orient>
 					<object class="sizeritem">
-						<object class="wxListBox" name="ID_LISTBOX1" variable="ListBox1" member="yes">
-							<default>-1</default>
-							<size>303,186</size>
+						<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+							<label>Artist&#x0A;Album&#x0A;Title&#x0A;Year&#x0A;</label>
+							<size>265,186</size>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
 						<option>2</option>
 					</object>
 					<object class="sizeritem">
-						<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
-							<label>Sample Play Button</label>
-							<handler function="OnQuit" entry="EVT_BUTTON" />
+						<object class="wxButton" name="ID_BUTTON2" variable="PauseButton" member="yes">
+							<label>Pause</label>
+							<size>114,88</size>
+							<handler function="PauseButtonOnClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON1" variable="StopButton" member="yes">
+							<label>Stop</label>
+							<size>111,49</size>
+							<handler function="StopButtonOnClick" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<minsize>-1,-1</minsize>
 						<option>1</option>
 					</object>
 				</object>

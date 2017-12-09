@@ -8,7 +8,7 @@
  **************************************************************/
 
 #include "Winters_GateApp.h"
-#include<cstring>
+#include <cstring>
 #include <sstream>
 
 //(*AppHeaders
