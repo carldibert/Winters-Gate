@@ -17,6 +17,7 @@
 					<Add option="-DSFML_STATIC" />
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll/mswu" />
 					<Add directory="C:/boost_1_65_1" />
+					<Add directory="dependencies/portaudio/include" />
 				</Compiler>
 				<ResourceCompiler>
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll/mswu" />
@@ -29,6 +30,7 @@
 					<Add library="libwxzlib.a" />
 					<Add library="C:/boost_1_65_1/stage/lib/libboost_system-mgw63-mt-1_65_1.a" />
 					<Add library="C:/boost_1_65_1/stage/lib/libboost_filesystem-mgw63-mt-1_65_1.a" />
+					<Add library="dependencies/portaudio/lib/.libs/libportaudio.dll.a" />
 					<Add directory="C:/wxWidgets-2.8.12/lib/gcc_dll" />
 					<Add directory="dependencies/SFML-2.4.2/lib" />
 				</Linker>

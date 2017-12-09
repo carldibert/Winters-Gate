@@ -10,6 +10,7 @@
 #include "Winters_GateMain.h"
 #include <wx/msgdlg.h>
 #include <wx/intl.h>
+#include <wx/listctrl.h>
 #include <boost/filesystem.hpp>
 #include <fstream>
 #include <string>
@@ -117,7 +118,6 @@ void Winters_GateDialog::PauseButtonOnClick(wxCommandEvent& event){
 
 //action for the Stop Button
 void Winters_GateDialog::StopButtonOnClick(wxCommandEvent& event){
-    wxString myString = wxString::FromUTF8("Changed");
     const char* chars = "hello";
     wxString newString = wxString::FromUTF8(chars);
     StaticText1->SetLabel(newString);
@@ -183,12 +183,93 @@ void Winters_GateDialog::PopulateListBox(){
     }
 }
 
-void Winters_GateDialog::OnLibraryListBoxSelect(wxCommandEvent& event)
-{
+//custom data type for the song
+struct Song{
+    string title;
+    string artist;
+    string album;
+    string year;
+    string comment;
+    string fileLocation;
+};
+
+//outputs file size in bites
+int getFileSize(FILE *file){
+    int loc = ftell(file);
+    fseek(file,0,SEEK_END);
+    int size = ftell(file);
+    fseek(file,loc,SEEK_SET);
+    return size;
+};
+
+//reads in blocks of 30 for artist album title and comments
+string readInfo(FILE *file, int readLines){
+    char len[30];
+    fseek(file, readLines, SEEK_SET);
+    fread(len, 1, 30, file);
+    string result(len);
+    return result;
 }
 
-void Winters_GateDialog::OnLibraryListBoxDClick(wxCommandEvent& event)
-{
+//reads for the year that the song was made
+string readYear(FILE *file, int readLines){
+    char len[4];
+    fseek(file, readLines, SEEK_SET);
+    fread(len, 1, 4, file);
+    string result(len);
+    return result;
+}
+
+//reads information and puts it on the custom data type
+void readFile(FILE* file, Song& song, string fileLocation){
+    int readLocation = getFileSize(file)-125;
+    song.title = readInfo(file, readLocation);
+    readLocation = readLocation + 30;
+    song.artist = readInfo(file, readLocation);
+    readLocation = readLocation + 30;
+    song.album = readInfo(file, readLocation);
+    readLocation = readLocation + 30;
+
+    string yearStringTemp = readYear(file, readLocation);
+    string tempYear = yearStringTemp.c_str();
+    string temp;
+    for(int i=0; i<4; i++){
+        temp += tempYear[i];
+    }
+    song.year = temp;
+
+    readLocation = readLocation + 4;
+    song.comment = readInfo(file, readLocation);
+
+    song.fileLocation = fileLocation;
+}
+
+//adds the song info for the info title to the right on single click
+void Winters_GateDialog::OnLibraryListBoxSelect(wxCommandEvent& event){
+
+    string library_location = "C:\\Users\\Carl\\Music";
+    stringvec v;
+    read_directory(library_location, v);
+
+    int posOfLibrary = LibraryListBox->GetSelection();
+    string som = v.at(posOfLibrary);
+
+    FILE* sample = fopen(som.c_str(), "r");
+    Song song;
+    readFile(sample, song, som);
+
+    string songInfo = song.artist + "\n" + song.album + "\n" + song.title + "\n" + song.year;
+
+    const char* chars = songInfo.c_str();
+    wxString wxStringItem = wxString::FromUTF8(chars);
+    StaticText1->SetLabel(wxStringItem);
+}
+
+//action for double clicking on a selection on the LibraryListView
+void Winters_GateDialog::OnLibraryListBoxDClick(wxCommandEvent& event){
+    const char* chars = "hello";
+    wxString newString = wxString::FromUTF8(chars);
+    StaticText1->SetLabel(newString);
 }
 
 
