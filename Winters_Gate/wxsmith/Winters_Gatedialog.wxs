@@ -30,7 +30,7 @@
 					<orient>wxVERTICAL</orient>
 					<object class="sizeritem">
 						<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
-							<label>Artist&#x0A;Album&#x0A;Title&#x0A;Year&#x0A;</label>
+							<label></label>
 							<size>265,186</size>
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -41,6 +41,7 @@
 						<object class="wxButton" name="ID_BUTTON2" variable="PauseButton" member="yes">
 							<label>Pause</label>
 							<size>114,88</size>
+							<hidden>1</hidden>
 							<handler function="PauseButtonOnClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -51,6 +52,7 @@
 						<object class="wxButton" name="ID_BUTTON1" variable="StopButton" member="yes">
 							<label>Stop</label>
 							<size>111,49</size>
+							<hidden>1</hidden>
 							<handler function="StopButtonOnClick" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>

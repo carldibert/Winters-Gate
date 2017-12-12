@@ -11,7 +11,9 @@
 #include <wx/msgdlg.h>
 #include <wx/intl.h>
 #include <wx/listctrl.h>
+#include <wx/mediactrl.h>
 #include <boost/filesystem.hpp>
+#include <boost/thread.hpp>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -26,6 +28,8 @@ using namespace std;
 using namespace boost::filesystem;
 
 typedef std::vector<std::string> stringvec;
+
+string fileName;
 
 //helper functions
 enum wxbuildinfoformat {
@@ -65,10 +69,6 @@ BEGIN_EVENT_TABLE(Winters_GateDialog,wxDialog)
     //*)
 END_EVENT_TABLE()
 
-void makeBoxes(){
-
-}
-
 Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(Winters_GateDialog)
@@ -84,18 +84,19 @@ Winters_GateDialog::Winters_GateDialog(wxWindow* parent,wxWindowID id)
     BoxSizer2->Add(LibraryListBox, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer2, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer3 = new wxBoxSizer(wxVERTICAL);
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Artist\nAlbum\nTitle\nYear\n"), wxDefaultPosition, wxSize(265,186), 0, _T("ID_STATICTEXT1"));
+    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, wxEmptyString, wxDefaultPosition, wxSize(265,186), 0, _T("ID_STATICTEXT1"));
     BoxSizer3->Add(StaticText1, 2, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     PauseButton = new wxButton(this, ID_BUTTON2, _("Pause"), wxDefaultPosition, wxSize(114,88), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+    PauseButton->Hide();
     BoxSizer3->Add(PauseButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StopButton = new wxButton(this, ID_BUTTON1, _("Stop"), wxDefaultPosition, wxSize(111,49), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    StopButton->Hide();
     BoxSizer3->Add(StopButton, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(BoxSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
     BoxSizer1->Fit(this);
     BoxSizer1->SetSizeHints(this);
     Center();
-
     PopulateListBox();
 
     Connect(ID_LISTBOX2,wxEVT_COMMAND_LISTBOX_SELECTED,(wxObjectEventFunction)&Winters_GateDialog::OnLibraryListBoxSelect);
@@ -113,14 +114,10 @@ Winters_GateDialog::~Winters_GateDialog()
 
 //action for the Pause Button
 void Winters_GateDialog::PauseButtonOnClick(wxCommandEvent& event){
-
 }
 
 //action for the Stop Button
 void Winters_GateDialog::StopButtonOnClick(wxCommandEvent& event){
-    const char* chars = "hello";
-    wxString newString = wxString::FromUTF8(chars);
-    StaticText1->SetLabel(newString);
 }
 
 //checks if file is a .mp3 file
@@ -128,6 +125,17 @@ bool checkIfMP3(string fileLocation){
     int fileNameLength = fileLocation.length() - 4;
     string fileType = fileLocation.substr(fileNameLength, 4);
     if(fileType == ".mp3"){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+//checks if file is a .WAV file
+bool checkIfWAV(string fileLocation){
+    int fileNameLength = fileLocation.length() - 4;
+    string fileType = fileLocation.substr(fileNameLength, 4);
+    if(fileType == ".wav"){
         return true;
     } else {
         return false;
@@ -159,6 +167,8 @@ void read_directory(const std::string& name, stringvec& v){
                 read_directory(file_location, v);
             } else {
                 if(checkIfMP3(file_location)){
+                    v.push_back(file_location);
+                } else if (checkIfWAV(file_location)){
                     v.push_back(file_location);
                 }
             }
@@ -265,11 +275,37 @@ void Winters_GateDialog::OnLibraryListBoxSelect(wxCommandEvent& event){
     StaticText1->SetLabel(wxStringItem);
 }
 
+//plays selected song
+void playMusic (string fileLocation){
+
+    const char* stuff = fileLocation.c_str();
+    size_t size = strlen(stuff);
+    wchar_t* arr = new wchar_t[size];
+    for(size_t i=0; i<size; i++){
+        arr[i] = stuff[i];
+    }
+
+    PlaySound(arr, NULL, SND_FILENAME);
+
+}
+
 //action for double clicking on a selection on the LibraryListView
 void Winters_GateDialog::OnLibraryListBoxDClick(wxCommandEvent& event){
-    const char* chars = "hello";
-    wxString newString = wxString::FromUTF8(chars);
-    StaticText1->SetLabel(newString);
+    string library_location = "C:\\Users\\Carl\\Music";
+    stringvec v;
+    read_directory(library_location, v);
+
+    int posOfLibrary = LibraryListBox->GetSelection();
+    string som = v.at(posOfLibrary);
+
+    if(checkIfWAV(som)){
+        string stuff = "";
+        const char* chars = stuff.c_str();
+        wxString wxStringItem = wxString::FromUTF8(chars);
+        StaticText1->SetLabel(wxStringItem);
+    }
+
+    playMusic(som);
 }
 
 

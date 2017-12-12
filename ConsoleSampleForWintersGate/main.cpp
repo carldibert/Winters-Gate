@@ -7,6 +7,8 @@
 
 #include <windows.h>
 
+#include <boost/thread.hpp>
+
 using namespace std;
 using namespace boost::filesystem;
 
@@ -317,6 +319,10 @@ void runThroughLibrary(Song library[], int librarySize, Library& songLibrary){
     //use hashtables or map or multimap depending on what c++ calls it
 }
 
+void playMusic(){
+    PlaySound("E:\\Desktop\\03 Dreamwalkers.wav", NULL, SND_FILENAME);
+}
+
 int main()
 {
 
@@ -333,8 +339,14 @@ int main()
     Song library[libraryVector.size()];
     copy(libraryVector.begin(), libraryVector.end(), library);
 
-    Library songLibrary;
-    runThroughLibrary(library, libraryVector.size(), songLibrary);
+    //Library songLibrary;
+    //runThroughLibrary(library, libraryVector.size(), songLibrary);
+
+    boost::thread t{playMusic};
+    t.start();
+    //t.join();
+    cout << "hi" << endl;
+    //t.interrupt();
 
     return 0;
 }
