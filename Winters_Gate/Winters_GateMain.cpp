@@ -11,7 +11,7 @@
 #include <wx/msgdlg.h>
 #include <wx/intl.h>
 #include <wx/listctrl.h>
-#include <wx/mediactrl.h>
+#include <wx/thread.h>
 #include <boost/filesystem.hpp>
 #include <boost/thread.hpp>
 #include <fstream>
@@ -306,6 +306,8 @@ void Winters_GateDialog::OnLibraryListBoxDClick(wxCommandEvent& event){
     }
 
     playMusic(som);
+
+
 }
 
 

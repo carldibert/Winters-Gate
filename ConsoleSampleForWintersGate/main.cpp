@@ -343,9 +343,9 @@ int main()
     //runThroughLibrary(library, libraryVector.size(), songLibrary);
 
     boost::thread t{playMusic};
-    t.start();
+    t.run();
     //t.join();
-    cout << "hi" << endl;
+    //cout << "hi" << endl;
     //t.interrupt();
 
     return 0;
